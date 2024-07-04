@@ -1,3 +1,7 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+# More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
+
 name: Build and deploy Python app to Azure Web App - aqx-coqui
 
 on:
@@ -17,9 +21,6 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: '3.11'
-
-      - name: Install SoX
-        run: sudo apt-get install sox
 
       - name: Create and start virtual environment
         run: |
@@ -60,12 +61,13 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
+      
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_916069E4946C4A21B91259E5A542A9F8 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A7744624A4934AEE9E3B5D72A6FFF044 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E0555D773A6C4EB2BD187011F6C4E0D1 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_B03C59356A7B48769C064739B7700E90 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4E5BAB4B417249D3BBE45A538C973F6F }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1626A4999B674371AA6F6299931686FF }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -73,3 +75,4 @@ jobs:
         with:
           app-name: 'aqx-coqui'
           slot-name: 'Production'
+          
