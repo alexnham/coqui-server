@@ -10,7 +10,6 @@ import os
 from runGroq import runGroq
 from coqui_tts import tts_to_file
 from pydub import AudioSegment
-import numpy as np
 from scipy.io.wavfile import write
 import subprocess
 import time
