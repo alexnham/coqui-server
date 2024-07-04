@@ -31,7 +31,7 @@ async def toMulaw8000():
         print(f"Failed to convert audio: {stderr.decode('utf-8')}")
         return None
     else:
-        print("Audio conversion successful")
+        print("Audio converted")
     
     # Read and encode the saved file
     with open("audio_mulaw_8000.wav", "rb") as audio_file:
